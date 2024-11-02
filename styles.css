@@ -1,0 +1,824 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+  font-optical-sizing: auto;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  width: 100%;
+}
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 1614px;
+  background-image: url('assets/images/header.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.overlay img {
+  width: 50%;
+  margin-top: 385px;
+}
+
+/* Countdown styling */
+.countdown-container {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1rem;
+  direction: rtl;
+}
+
+.time-unit {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.label {
+  color: #4b5563;
+  font-size: 1.5rem;
+}
+
+.number {
+  color: #1f2937;
+  font-size: 1.875rem;
+  font-weight: bold;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #9ca3af;
+  margin: 0 0.5rem;
+}
+
+
+
+
+
+/* ---------------------------------- */
+
+
+
+/* .stats-section {
+  background-color: #f9f9f9;
+  padding: 2rem;
+  direction: rtl;
+} */
+
+.stats-section {
+  background-image: url('assets/images/image 05.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 2rem;
+  direction: rtl;
+  position: relative;
+}
+
+.stats-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 1;
+}
+
+/* .stats-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+} */
+
+.stats-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+}
+
+.stats-table,
+.time-filter {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(5px);
+}
+
+/* تنسيق الجدول */
+.stats-table {
+  flex: 2;
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.table-header {
+  display: grid;
+  width: 80%;
+  grid-template-columns: 2.5fr 2.5fr 1fr;
+  padding: 1rem;
+  border-bottom: 2px solid #eee;
+  font-weight: bold;
+  color: #b30004;
+  font-size: 21px;
+}
+
+.table-row {
+  width: 81%;
+  display: grid;
+  grid-template-columns: 3fr 2fr 1fr;
+  padding: 7px;
+  border-bottom: 1px solid #c5c5c5;
+  align-items: center;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cell img {
+  width: 32px;
+  height: 32px;
+}
+
+/* تنسيق الفلتر الزمني */
+.time-filter {
+  flex: 1;
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.time-filter h2 {
+  color: #003087;
+  margin-bottom: 0.5rem;
+  font-size: 50px;
+  margin-top: 30px;
+}
+
+.time-filter p {
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-size: 35px;
+  margin-top: 20px;
+}
+
+.date-inputs {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  margin-top: 50px;
+}
+
+.date-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 220px;
+}
+
+.date-field input {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.apply-btn {
+  width: 100%;
+  padding: 5px;
+  background-color: #003087;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background-color 0.3s;
+  font-family: "Cairo", sans-serif;
+}
+
+.apply-btn:hover {
+  background-color: #002266;
+}
+
+.image-cell {
+  margin-right: -33px;
+  margin-left: 12px;
+}
+
+.line-div {
+  position: relative;
+  width: 100%; /* Full width */
+  height: 400px; /* Height of the chart */
+  padding: 20px;
+}
+
+#myLineChart {
+  width: 100% !important; /* Ensure canvas takes full width */
+  height: auto !important; /* Maintain aspect ratio */
+}
+
+
+
+
+/* ------------------------------------------------------ */
+
+
+
+
+
+
+
+/* .candidates-section {
+  padding: 4rem 2rem;
+  background-color: #f5f5f5;
+  direction: rtl;
+} */
+
+.candidates-section {
+  background-image: url('assets/images/Back01.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 4rem 2rem;
+  position: relative;
+  direction: rtl;
+
+}
+
+.candidates-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  z-index: 1;
+}
+
+.candidates-container {
+  position: relative;
+  z-index: 2;
+
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 3rem;
+
+
+  margin: 0 auto !important;
+
+}
+
+
+
+.text-content {
+  text-align: right;
+  max-width: 445px;
+}
+
+.section-title {
+  color: #003087;
+  font-size: 40px;
+  margin-bottom: 1rem;
+}
+
+.description {
+  color: #464646;
+  ;
+  line-height: 1.8;
+  font-size: larger;
+  margin-top: 35px;
+
+}
+
+.candidates-comparison {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.donut-chart {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.chart-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.chart-ring {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.segment {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.segment.blue {
+  background-color: #003087;
+  transform-origin: center;
+  transform: rotate(0deg);
+  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
+}
+
+.segment.red {
+  background-color: #CF2E2E;
+  transform-origin: center;
+  transform: rotate(270deg);
+  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
+}
+
+.percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: #333;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.candidates-names {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.candidate {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.name {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.indicator {
+  width: 20px;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.blue-indicator {
+  background-color: #003087;
+}
+
+.red-indicator {
+  background-color: #CF2E2E;
+}
+
+.main-div-names {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 55px;
+}
+
+.sub-div-name-one {
+  width: 37%;
+  padding-bottom: 15px;
+  border-bottom: 15px solid #003087;
+}
+
+.sub-div-name-tow {
+  width: 37%;
+  padding-bottom: 15px;
+  border-bottom: 15px solid #cf2e2e;
+}
+
+.p-name-one {
+  font-size: 25px;
+  color: #003087;
+}
+
+.p-name-tow {
+  font-size: 25px;
+  color: #cf2e2e;
+}
+
+
+
+
+/* ---------------------------------------------------------- */
+
+.subjects-main-div {
+  display: flex;
+  flex-direction: column;
+  border-top: 5px solid #003087;
+  align-items: center;
+}
+
+.candidates-images-main-div {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.candidates-images-div {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.candidates-images-div img {
+  width: 90%;
+}
+
+.candidates-images-div span {
+  font-size: 32px;
+  color: #1348b5;
+  font-weight: 700;
+  margin-top: 25px;
+}
+
+.subjects-div {
+  display: flex;
+  width: 90%;
+  box-shadow: 1px 0px 6px 1px #80808061;
+  justify-content: space-around;
+  margin-top: 20px;
+  padding: 40px 0px;
+  flex-direction: column;
+}
+
+.sub-subjects-div {
+  display: flex;
+}
+
+.tramp-subjects-div,
+.camela-subjects-div {
+  display: flex;
+  width: 45%;
+  flex-direction: column;
+}
+
+.last-section-main-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  box-shadow: 1px 0px 6px 1px #80808061;
+  width: 90%;
+}
+
+
+.label-filter {
+  color: #003087;
+  font-weight: 800;
+}
+
+
+.topic-cell {
+  font-weight: 800;
+  color: #003087;
+}
+
+.chart-container {
+  width: 300px;
+  height: 300px;
+  position: relative;
+}
+
+.chart-container-x {
+  width: 400px;
+  height: 250px;
+  /* Set a fixed height */
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 45px;
+}
+
+.chart-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1f4b99;
+
+}
+
+.canvas-height {
+  max-height: 200px;
+}
+
+.last-h1 {
+  margin-top: 30px;
+}
+
+.table-marge {
+  margin-right: 50px;
+}
+
+.p-color-section3
+{
+color: #bb3131
+}
+
+
+@media screen and (min-width: 1440px) {
+  .hero-section {
+      height: 1254px;
+  }
+
+  .overlay img {
+      width: 53%;
+      margin-top: 698px;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .hero-section {
+      height: 800px;
+  }
+
+  .overlay img {
+      width: 50%;
+      margin-top: 285px;
+  }
+
+  .countdown-container {
+      gap: 1px;
+  }
+
+  .label {
+      font-size: 20px;
+      color: #303030;
+  }
+
+  .number {
+      font-size: 23px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .hero-section {
+      height: 100vh;
+      min-height: 800px;
+  }
+
+  .overlay img {
+      width: 80%;
+      margin-top: 200px;
+  }
+
+  .countdown-container {
+      gap: 1px;
+  }
+
+  .label {
+      font-size: 1.25rem;
+  }
+
+  .number {
+      font-size: 1.5rem;
+  }
+
+  .stats-container {
+      flex-direction: column;
+  }
+
+  .time-filter {
+      max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+
+
+  .hero-section {
+      height: 100vh;
+      min-height: 600px;
+  }
+
+  .overlay img {
+      width: 90%;
+      margin-top: 150px;
+  }
+
+  .countdown-container {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+  }
+
+  .time-unit {
+      flex-direction: column;
+      gap: 0.25rem;
+  }
+
+  .label {
+      font-size: 1rem;
+  }
+
+  .number {
+      font-size: 1.25rem;
+  }
+
+  .separator {
+      display: none;
+  }
+
+  .stats-section {
+      padding: 1rem;
+  }
+
+  .table-row,
+  .table-header {
+
+      font-size: 0.9rem;
+  }
+
+  .candidates-container {
+      flex-direction: column;
+      align-items: center;
+
+  }
+
+  .sub-subjects-div {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .chart-container-x {
+      width: 290px;
+      height: 245px;
+      margin: 0 auto;
+      text-align: center;
+      margin-top: 45px;
+  }
+
+  .candidates-images-div span {
+      font-size: 18px;
+      color: #1348b5;
+      font-weight: 700;
+      margin-top: 25px;
+  }
+
+  .p-name-one {
+      font-size: 16px;
+      color: #003087;
+  }
+
+  .p-name-tow {
+      font-size: 16px;
+      color: #cf2e2e;
+  }
+
+  .section-title {
+      color: #003087;
+      font-size: 32px;
+      margin-bottom: 1rem;
+  }
+
+  .table-marge {
+      margin-right: 0px;
+  }
+
+  .donut-chart {
+      position: relative;
+      width: 250px;
+      height: 250px;
+  }
+
+  .chart-container {
+      width: 250px;
+      height: 250px;
+      position: relative;
+  }
+
+  .last-h1 {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 16px;
+      padding: 15px;
+  }
+
+  .line-div {
+      margin-top: 60px;
+      margin-bottom: 60px;
+      display: block;
+      box-sizing: border-box;
+      height: 400px;
+      width: 800px;
+      overflow-x: scroll;
+  }
+
+
+}
+
+@media screen and (max-width: 480px) {
+
+  .hero-section {
+      min-height: 500px;
+  }
+
+  .overlay img {
+      width: 95%;
+      margin-top: 100px;
+  }
+
+  .countdown-container {
+      padding: 0.5rem;
+  }
+
+  .stats-section {
+      padding: 0.5rem;
+  }
+
+  .stats-table {
+      padding: 1rem;
+  }
+
+  .table-row,
+  .table-header {
+      font-size: 11px;
+      padding: 0.75rem;
+      width: 100%;
+  }
+
+  .cell img {
+      width: 16px;
+      height: 16px;
+  }
+
+  .time-filter {
+      padding: 20px;
+  }
+
+  .time-filter h2 {
+      font-size: 1.2rem;
+      margin: 0px;
+  }
+
+  .time-filter p {
+      font-size: 0.9rem;
+  }
+
+  .date-field input {
+      padding: 0.5rem;
+  }
+
+  .apply-btn {
+      padding: 0.5rem;
+      font-size: 0.9rem;
+  }
+
+  .date-inputs {
+      margin: 20px 0px;
+  }
+}
